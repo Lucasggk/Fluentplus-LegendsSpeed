@@ -44,8 +44,13 @@ main:AddToggle("so pra funfa", {
     Description = "Farma orb de XP",
     Default = false,
     Callback = function(state)
-      while (state) do
-print("oi, tempo para próxima palavra: ".. Delay)
-task.wait(Delay)
-                end
+    farming = state
+    if farming then
+        task.spawn(function()
+            while farming do
+                print("oi, tempo para próxima palavra: " .. Delay)
+                task.wait(Delay)
+            end
+        end)
+    end
     })
