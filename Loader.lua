@@ -19,6 +19,15 @@ local main = Window:AddTab({
     Icon = "home"
   })
 
+main:AddParagraph({
+        Title = "delay do farm",
+        Description = "para nao causar lag você decide o delay"
+    })
+
+main:AddSlider("so pra funfa", {
+        
+        
+
 main:AddToggle("so pra funfa", {
     Title = "",
     Description = "",
