@@ -25,14 +25,15 @@ main:AddParagraph({
     })
 
 main:AddSlider("so pra funfa", {
-        Title = "Delay",
-        Default = 0.25,
-        Min = 0.05,
-        Max = 0.5,
-        Rounding = 0.05
-        Callback = function(value)
-            local Delay = (value)
-        })
+    Title = "Delay",
+    Default = 0.25,
+    Min = 0.05,
+    Max = 0.5,
+    Rounding = 2,
+    Callback = function(value)
+        local Delay = value
+    end
+})
 
         
 
