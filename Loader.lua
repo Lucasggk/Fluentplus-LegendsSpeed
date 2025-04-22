@@ -24,16 +24,28 @@ main:AddParagraph({
         Description = "para nao causar lag você decide o delay"
     })
 
-Delay = 0.25
+xpDelay = 0.25
+orbDelay = 0.25
 
 main:AddSlider("so pra funfa", {
-    Title = "Delay",
+    Title = "xp Delay",
     Default = 0.25,
     Min = 0.05,
     Max = 0.5,
     Rounding = 2,
     Callback = function(value)
-        local Delay = value
+        local xpDelay = value
+    end
+})
+
+main:AddSlider("so pra funfa", {
+    Title = "orb Delay",
+    Default = 0.25,
+    Min = 0.05,
+    Max = 0.5,
+    Rounding = 2,
+    Callback = function(value)
+        local orbDelay = value
     end
 })
 
@@ -48,8 +60,47 @@ main:AddToggle("so pra funfa", {
     if farming then
         task.spawn(function()
             while farming do
-                print("oi, tempo para próxima palavra: " .. Delay)
-                task.wait(Delay)
+
+local args = {
+    [1] = "collectOrb",
+    [2] = "Yellow Orb",
+    [3] = "City"
+}
+
+game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer(unpack(args))
+
+                            
+                task.wait(xpDelay)
+            end
+        end)
+    end
+        end
+    })
+
+
+
+
+
+main:AddToggle("so pra funfa", {
+    Title = "farm orb ",
+    Description = "Farma orb normal ",
+    Default = false,
+    Callback = function(state)
+    farming = state
+    if farming then
+        task.spawn(function()
+            while farming do
+
+local args = {
+    [1] = "collectOrb",
+    [2] = "Orange Orb",
+    [3] = "City"
+}
+
+game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer(unpack(args))
+
+                            
+                task.wait(orbDelay)
             end
         end)
     end
