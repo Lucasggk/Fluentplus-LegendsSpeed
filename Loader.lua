@@ -24,6 +24,8 @@ main:AddParagraph({
         Description = "para nao causar lag você decide o delay"
     })
 
+Delay = 0.25
+
 main:AddSlider("so pra funfa", {
     Title = "Delay",
     Default = 0.25,
@@ -43,7 +45,7 @@ main:AddToggle("so pra funfa", {
     Default = false,
     Callback = function(state)
       while (state) do
-print("oi, tempo para próxima palavra: "... Delay)
+print("oi, tempo para próxima palavra: ".. Delay)
 task.wait(Delay)
                 end
     })
