@@ -25,18 +25,24 @@ main:AddParagraph({
     })
 
 main:AddSlider("so pra funfa", {
-        
+        Title = "Delay",
+        Default = 0.25,
+        Min = 0.05,
+        Max = 0.5,
+        Rounding = 0.05
+        Callback = function(value)
+            local Delay = (value)
+        })
+
         
 
 main:AddToggle("so pra funfa", {
-    Title = "",
-    Description = "",
+    Title = "farm orb XP",
+    Description = "Farma orb de XP",
     Default = false,
     Callback = function(state)
-      if (state) then
-        print("oi")
-      else
-        print("oiii")
-            end
-        end
+      while (state) do
+print("oi, tempo para próxima palavra: "... Delay)
+task.wait(Delay)
+                end
     })
