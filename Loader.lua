@@ -67,7 +67,7 @@ local section = main:AddSection("onde você esta farmando?")
 
 local Dropdown = main:AddDropdown("Dropdown", {
     Title = "Selecione a Cidade ", 
-    Values = {"Snow City", "City"},
+    Values = {"Snow City", "City", "Magma City"},
     Multi = false,
     Default = "City",
 })
@@ -187,7 +187,7 @@ local tps = Window:AddTab({
     })
 
 tps:AddButton({
-    Title = "Área Congelada",
+    Title = "Área Snow",
     Description = "Vai para a área congelada, req lv 25",
     Callback = function()
         local args = {
@@ -199,5 +199,21 @@ tps:AddButton({
 
         wait(0.1)
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-9673.83203125, 59.306854248046875, 3769.768798828125)
+    end
+})
+
+tps:AddButton({
+    Title = "Área Magma",
+    Description = "Vai para a área Magma, req 1 rebirth",
+    Callback = function()
+        local args = {
+            [1] = "travelToArea",
+            [2] = workspace.areaCircles.areaCircle
+        }
+
+        game:GetService("ReplicatedStorage").rEvents.areaTravelRemote:InvokeServer(unpack(args))
+
+        wait(0.1)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-11055.4072265625, 217.26686096191406, 4903.236328125)
     end
 })
