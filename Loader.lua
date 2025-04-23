@@ -72,10 +72,6 @@ local Dropdown = main:AddDropdown("Dropdown", {
     Default = "City",
 })
 
-local meuParagrafo = main:AddParagraph({
-    Title = "Info",
-    Description = "Texto inicial"
-})
 
 local Cidade = Dropdown.Value
 
