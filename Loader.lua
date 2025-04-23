@@ -79,7 +79,7 @@ main:AddToggle("so pra funfa", {
 local args = {
     [1] = "collectOrb",
     [2] = "Yellow Orb",
-    [3] = {"Snow City", "City"}
+    [3] = 
 }
 
 game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer(unpack(args))
@@ -109,7 +109,7 @@ main:AddToggle("so pra funfa", {
 local args = {
     [1] = "collectOrb",
     [2] = "Red Orb",
-    [3] = {"Snow City", "City"}
+    [3] = 
 }
 
 game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer(unpack(args))
@@ -135,8 +135,8 @@ main:AddToggle("so pra funfa", {
 
 local args = {
     [1] = "collectOrb",
-    [2] = "Red Orb",
-    [3] = {"Snow City", "City"}
+    [2] = "Gem",
+    [3] = 
 }
 
 game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer(unpack(args))
