@@ -19,9 +19,7 @@ local main = Window:AddTab({
     Icon = "home"
   })
 
-local section = main:AddSection({
-        Title = "delays para farm"
-    })
+local section = main:AddSection("Delays do farm")
 
 main:AddParagraph({
         Title = "delay do farm",
@@ -65,12 +63,10 @@ main:AddSlider("so pra funfa", {
     end
 })
 
-local section = main:AddSection({
-        Title = "onde seu farm vai ocorrer"
-            })
+local section = main:AddSection("onde você esta farmando?")
 
 local Dropdown = main:AddDropdown("Dropdown", {
-    Title = "Selecione a Cidade",
+    Title = "Selecione a Cidade (obrigatorio)",
     Values = {"Snow City", "City"},
     Multi = false,
     Default = "City",
@@ -86,9 +82,7 @@ end)
 
 
 
-local section = main:AddSection({
-        Title = "toggle de farm"
-            })
+local section = main:AddSection("toggle do farm")
         
 
 main:AddToggle("so pra funfa", {
