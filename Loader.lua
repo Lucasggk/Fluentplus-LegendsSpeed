@@ -106,3 +106,37 @@ game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer(unpack(args))
     end
         end
     })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+local tps = Window:AddTab({
+        Title = "Teleports",
+        Icon = "list"
+    })
+
+tps:AddButton({
+        Title = "área congelada"
+        Description = "vai para a área congelada, req lv 25", 
+        Callback = function()
+            local args = {
+    [1] = "travelToArea",
+    [2] = workspace.areaCircles.areaCircle
+}
+
+game:GetService("ReplicatedStorage").rEvents.areaTravelRemote:InvokeServer(unpack(args))
+
+
+
+        end
+    })
