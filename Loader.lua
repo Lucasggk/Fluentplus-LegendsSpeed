@@ -19,6 +19,10 @@ local main = Window:AddTab({
     Icon = "home"
   })
 
+local section = main:AddSection({
+        Title = "delays para farm"
+    })
+
 main:AddParagraph({
         Title = "delay do farm",
         Description = "para nao causar lag você decide o delay"
@@ -61,9 +65,15 @@ main:AddSlider("so pra funfa", {
     end
 })
 
+local section = main:AddSection({
+        Title = "onde seu farm vai ocorrer"
+            })
 
 
 
+local section = main:AddSection({
+        Title = "toggle de farm"
+            })
         
 
 main:AddToggle("so pra funfa", {
