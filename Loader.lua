@@ -66,7 +66,7 @@ main:AddSlider("so pra funfa", {
 local section = main:AddSection("onde você esta farmando?")
 
 local Dropdown = main:AddDropdown("Dropdown", {
-    Title = "Selecione a Cidade (obrigatorio)",
+    Title = "Selecione a Cidade ", 
     Values = {"Snow City", "City"},
     Multi = false,
     Default = "City",
@@ -79,6 +79,9 @@ Dropdown:OnChanged(function(value)
     print("Cidade selecionada:", Cidade)
 end)
 
+main:AddParagraph({
+        Title = "Obrigatorio por a cidade de farm!"
+    })
 
 
 
