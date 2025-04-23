@@ -184,18 +184,17 @@ local tps = Window:AddTab({
     })
 
 tps:AddButton({
-        Title = "área congelada",
-        Description = "vai para a área congelada, req lv 25", 
-        Callback = function()
-            local args = {
-    [1] = "travelToArea",
-    [2] = workspace.areaCircles.areaCircle
-}
+    Title = "Área Congelada",
+    Description = "Vai para a área congelada, req lv 25",
+    Callback = function()
+        local args = {
+            [1] = "travelToArea",
+            [2] = workspace.areaCircles.areaCircle
+        }
 
-game:GetService("ReplicatedStorage").rEvents.areaTravelRemote:InvokeServer(unpack(args))
+        game:GetService("ReplicatedStorage").rEvents.areaTravelRemote:InvokeServer(unpack(args))
 
-repeat.task(0.1)
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-9673.83203125, 59.306854248046875, 3769.768798828125
-            end 
-        end
-    })
+        wait(0.1)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-9673.83203125, 59.306854248046875, 3769.768798828125)
+    end
+})
