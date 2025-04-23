@@ -69,6 +69,21 @@ local section = main:AddSection({
         Title = "onde seu farm vai ocorrer"
             })
 
+local Dropdown = main:AddDropdown("Dropdown", {
+    Title = "Selecione a Cidade",
+    Values = {"Snow City", "City"},
+    Multi = false,
+    Default = "City",
+})
+
+local Cidade = Dropdown.Value
+
+Dropdown:OnChanged(function(value)
+    Cidade = value
+    print("Cidade selecionada:", Cidade)
+end)
+
+
 
 
 local section = main:AddSection({
@@ -89,7 +104,7 @@ main:AddToggle("so pra funfa", {
 local args = {
     [1] = "collectOrb",
     [2] = "Yellow Orb",
-    [3] = 
+    [3] = Cidade
 }
 
 game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer(unpack(args))
@@ -119,7 +134,7 @@ main:AddToggle("so pra funfa", {
 local args = {
     [1] = "collectOrb",
     [2] = "Red Orb",
-    [3] = 
+    [3] = Cidade
 }
 
 game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer(unpack(args))
@@ -146,7 +161,7 @@ main:AddToggle("so pra funfa", {
 local args = {
     [1] = "collectOrb",
     [2] = "Gem",
-    [3] = 
+    [3] = Cidade
 }
 
 game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer(unpack(args))
