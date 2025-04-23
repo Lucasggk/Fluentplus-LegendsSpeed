@@ -26,6 +26,7 @@ main:AddParagraph({
 
 xpDelay = 0.25
 orbDelay = 0.25
+gemDelay = 0.25
 
 main:AddSlider("so pra funfa", {
     Title = "xp Delay",
@@ -49,6 +50,20 @@ main:AddSlider("so pra funfa", {
     end
 })
 
+main:AddSlider("so pra funfa", {
+    Title = "gem Delay",
+    Default = 0.25,
+    Min = 0.05,
+    Max = 0.5,
+    Rounding = 2,
+    Callback = function(value)
+        local gemDelay = value
+    end
+})
+
+
+
+
         
 
 main:AddToggle("so pra funfa", {
@@ -64,7 +79,7 @@ main:AddToggle("so pra funfa", {
 local args = {
     [1] = "collectOrb",
     [2] = "Yellow Orb",
-    [3] = "City"
+    [3] = {"Snow City", "City"}
 }
 
 game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer(unpack(args))
@@ -94,7 +109,7 @@ main:AddToggle("so pra funfa", {
 local args = {
     [1] = "collectOrb",
     [2] = "Red Orb",
-    [3] = "City"
+    [3] = {"Snow City", "City"}
 }
 
 game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer(unpack(args))
@@ -108,7 +123,31 @@ game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer(unpack(args))
     })
 
 
+main:AddToggle("so pra funfa", {
+    Title = "farm gem orb ",
+    Description = "Farma gem orb ",
+    Default = false,
+    Callback = function(state)
+    farming = state
+    if farming then
+        task.spawn(function()
+            while farming do
 
+local args = {
+    [1] = "collectOrb",
+    [2] = "Red Orb",
+    [3] = {"Snow City", "City"}
+}
+
+game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer(unpack(args))
+
+                            
+                task.wait(gemDelay)
+            end
+        end)
+    end
+        end
+    })
 
 
 
