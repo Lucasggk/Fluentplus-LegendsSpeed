@@ -72,7 +72,7 @@ local Dropdown = main:AddDropdown("Dropdown", {
     Default = "City",
 })
 
-local meuParagrafo = Main:AddParagraph({
+local meuParagrafo = main:AddParagraph({
     Title = "Info",
     Description = "Texto inicial"
 })
