@@ -6,7 +6,7 @@ local Window = Fluent:CreateWindow({
     Title = "Legends of Speed",
     SubTitle = "Feito por Lucas",
     TabWidth = 160,
-    Size = UDim2.fromOffset(500, 350),
+    Size = UDim2.fromOffset(500, 500),
     Acrylic = false,
     Theme = "Dark",
     Center = true,
@@ -63,7 +63,7 @@ main:AddToggle("so pra funfa", {
 
 local args = {
     [1] = "collectOrb",
-    [2] = "Yellow Orb",
+    [2] = "Red Orb",
     [3] = "City"
 }
 
