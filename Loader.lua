@@ -77,8 +77,6 @@ local meuParagrafo = Main:AddParagraph({
     Description = "Texto inicial"
 })
 
-meuParagrafo:SetDescription("Texto atualizado")
-
 local Cidade = Dropdown.Value
 
 Dropdown:OnChanged(function(value)
