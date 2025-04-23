@@ -63,7 +63,7 @@ main:AddToggle("so pra funfa", {
 
 local args = {
     [1] = "collectOrb",
-    [2] = "Red Orb",
+    [2] = "Yellow Orb",
     [3] = "City"
 }
 
@@ -93,7 +93,7 @@ main:AddToggle("so pra funfa", {
 
 local args = {
     [1] = "collectOrb",
-    [2] = "Orange Orb",
+    [2] = "Red Orb",
     [3] = "City"
 }
 
