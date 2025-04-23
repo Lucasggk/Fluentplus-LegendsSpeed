@@ -194,7 +194,8 @@ tps:AddButton({
 
 game:GetService("ReplicatedStorage").rEvents.areaTravelRemote:InvokeServer(unpack(args))
 
-
+repeat.task(0.1)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-9673.83203125, 59.306854248046875, 3769.768798828125
 
         end
     })
