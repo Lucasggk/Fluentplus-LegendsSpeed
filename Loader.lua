@@ -126,7 +126,7 @@ local tps = Window:AddTab({
     })
 
 tps:AddButton({
-        Title = "área congelada"
+        Title = "área congelada",
         Description = "vai para a área congelada, req lv 25", 
         Callback = function()
             local args = {
