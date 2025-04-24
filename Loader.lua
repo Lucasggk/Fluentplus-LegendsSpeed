@@ -27,7 +27,7 @@ gemDelay = 0.25
 main:AddSlider("xpDelay", {
     Title = "xp Delay",
     Default = 0.25,
-    Min = 0.05,
+    Min = 0.01,
     Max = 0.5,
     Rounding = 2,
     Callback = function(value)
@@ -38,7 +38,7 @@ main:AddSlider("xpDelay", {
 main:AddSlider("orbDelay", {
     Title = "orb Delay",
     Default = 0.25,
-    Min = 0.05,
+    Min = 0.01,
     Max = 0.5,
     Rounding = 2,
     Callback = function(value)
@@ -49,7 +49,7 @@ main:AddSlider("orbDelay", {
 main:AddSlider("gemDelay", {
     Title = "gem Delay",
     Default = 0.25,
-    Min = 0.05,
+    Min = 0.01,
     Max = 0.5,
     Rounding = 2,
     Callback = function(value)
