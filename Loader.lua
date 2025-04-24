@@ -40,7 +40,7 @@ main:AddSlider("orbDelay", {
     Default = 0.25,
     Min = 0.01,
     Max = 0.5,
-    Rounding = 2,
+    Rounding = 3,
     Callback = function(value)
         orbDelay = value
     end
