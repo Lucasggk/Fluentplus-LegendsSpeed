@@ -93,11 +93,11 @@ main:AddToggle("so pra funfa", {
     Title = "farm orb XP",
     Description = "Farma orb de XP",
     Default = false,
-    Callback = function(state)
-    farming = state
-    if farming then
+    Callback = function(state1)
+    farming1 = state1
+    if farming1 then
         task.spawn(function()
-            while farming do
+            while farming1 do
 
 local args = {
     [1] = "collectOrb",
@@ -123,11 +123,11 @@ main:AddToggle("so pra funfa", {
     Title = "farm orb ",
     Description = "Farma orb normal ",
     Default = false,
-    Callback = function(state)
-    farming = state
-    if farming then
+    Callback = function(state2)
+    farming2 = state2
+    if farming2 then
         task.spawn(function()
-            while farming do
+            while farming2 do
 
 local args = {
     [1] = "collectOrb",
@@ -150,11 +150,11 @@ main:AddToggle("so pra funfa", {
     Title = "farm gem orb ",
     Description = "Farma gem orb ",
     Default = false,
-    Callback = function(state)
-    farming = state
-    if farming then
+    Callback = function(state3)
+    farming3 = state3
+    if farming3 then
         task.spawn(function()
-            while farming do
+            while farming3 do
 
 local args = {
     [1] = "collectOrb",
