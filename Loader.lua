@@ -1,5 +1,3 @@
-
-
 local Fluent = loadstring(Game:HttpGet("https://raw.githubusercontent.com/discoart/FluentPlus/refs/heads/main/release.lua", true))() 
 
 local Window = Fluent:CreateWindow({
@@ -13,67 +11,62 @@ local Window = Fluent:CreateWindow({
     IsDraggable = true
 })
 
+local main = Window:AddTab({ Title = "main", Icon = "home" })
 
-local main = Window:AddTab({
-    Title = "main",
-    Icon = "home"
-  })
-
-local section = main:AddSection("Delays do farm")
+local section1 = main:AddSection("Delays do farm")
 
 main:AddParagraph({
-        Title = "delay do farm",
-        Description = "para nao causar lag você decide o delay"
-    })
+    Title = "delay do farm",
+    Description = "para nao causar lag você decide o delay"
+})
 
 xpDelay = 0.25
 orbDelay = 0.25
 gemDelay = 0.25
 
-main:AddSlider("so pra funfa", {
+main:AddSlider("xpDelay", {
     Title = "xp Delay",
     Default = 0.25,
     Min = 0.05,
     Max = 0.5,
     Rounding = 2,
     Callback = function(value)
-        local xpDelay = value
+        xpDelay = value
     end
 })
 
-main:AddSlider("so pra funfa", {
+main:AddSlider("orbDelay", {
     Title = "orb Delay",
     Default = 0.25,
     Min = 0.05,
     Max = 0.5,
     Rounding = 2,
     Callback = function(value)
-        local orbDelay = value
+        orbDelay = value
     end
 })
 
-main:AddSlider("so pra funfa", {
+main:AddSlider("gemDelay", {
     Title = "gem Delay",
     Default = 0.25,
     Min = 0.05,
     Max = 0.5,
     Rounding = 2,
     Callback = function(value)
-        local gemDelay = value
+        gemDelay = value
     end
 })
 
-local section = main:AddSection("onde você esta farmando?")
+local section2 = main:AddSection("Onde você está farmando?")
 
-local Dropdown = main:AddDropdown("Dropdown", {
-    Title = "Selecione a Cidade ", 
+local Cidade = "City"
+
+local Dropdown = main:AddDropdown("CidadeFarm", {
+    Title = "Selecione a Cidade", 
     Values = {"City", "Snow City", "Magma City"},
     Multi = false,
-    Default = "City",
+    Default = "City"
 })
-
-
-local Cidade = Dropdown.Value
 
 Dropdown:OnChanged(function(value)
     Cidade = value
@@ -81,137 +74,115 @@ Dropdown:OnChanged(function(value)
 end)
 
 main:AddParagraph({
-        Title = "Obrigatorio por a cidade de farm!"
-    })
+    Title = "Obrigatório por a cidade de farm!"
+})
 
+local section3 = main:AddSection("Toggles do Farm")
 
+local farming1 = false
+local farming2 = false
+local farming3 = false
+local farming4 = false
 
-local section = main:AddSection("toggle do farm")
-        
-
-main:AddToggle("so pra funfa", {
+main:AddToggle("FarmXP", {
     Title = "farm orb XP",
     Description = "Farma orb de XP",
     Default = false,
-    Callback = function(state1)
-    farming1 = state1
-    if farming1 then
-        task.spawn(function()
-            while farming1 do
-
-local args = {
-    [1] = "collectOrb",
-    [2] = "Yellow Orb",
-    [3] = Cidade
-}
-
-game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer(unpack(args))
-
-                            
-                task.wait(xpDelay)
-            end
-        end)
-    end
+    Callback = function(state)
+        farming1 = state
+        if farming1 then
+            task.spawn(function()
+                while farming1 do
+                    local args = {
+                        [1] = "collectOrb",
+                        [2] = "Yellow Orb",
+                        [3] = Cidade
+                    }
+                    game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer(unpack(args))
+                    task.wait(xpDelay)
+                end
+            end)
         end
-    })
+    end
+})
 
-
-
-
-
-main:AddToggle("so pra funfa", {
-    Title = "farm orb ",
-    Description = "Farma orb normal ",
+main:AddToggle("FarmNormal", {
+    Title = "farm orb",
+    Description = "Farma orb normal",
     Default = false,
-    Callback = function(state2)
-    farming2 = state2
-    if farming2 then
-        task.spawn(function()
-            while farming2 do
-
-local args = {
-    [1] = "collectOrb",
-    [2] = "Ethereal Orb",
-    [3] = cidade
-}
-
-game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer(unpack(args))
-
-                            
-                task.wait(orbDelay)
-            end
-        end)
-    end
+    Callback = function(state)
+        farming2 = state
+        if farming2 then
+            task.spawn(function()
+                while farming2 do
+                    local args = {
+                        [1] = "collectOrb",
+                        [2] = "Ethereal Orb",
+                        [3] = Cidade
+                    }
+                    game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer(unpack(args))
+                    task.wait(orbDelay)
+                end
+            end)
         end
-    })
+    end
+})
 
-
-main:AddToggle("so pra funfa", {
-    Title = "farm gem orb ",
-    Description = "Farma gem orb ",
+main:AddToggle("FarmGem", {
+    Title = "farm gem orb",
+    Description = "Farma gem orb",
     Default = false,
-    Callback = function(state3)
-    farming3 = state3
-    if farming3 then
-        task.spawn(function()
-            while farming3 do
-
-local args = {
-    [1] = "collectOrb",
-    [2] = "Infernal Gem",
-    [3] = cidade
-}
-
-game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer(unpack(args))
-
-                            
-                task.wait(gemDelay)
-            end
-        end)
+    Callback = function(state)
+        farming3 = state
+        if farming3 then
+            task.spawn(function()
+                while farming3 do
+                    local args = {
+                        [1] = "collectOrb",
+                        [2] = "Infernal Gem",
+                        [3] = Cidade
+                    }
+                    game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer(unpack(args))
+                    task.wait(gemDelay)
+                end
+            end)
+        end
     end
+})
+
+main:AddToggle("AutoRebirth", {
+    Title = "auto rebirth",
+    Description = "Dá rebirth automaticamente",
+    Default = false,
+    Callback = function(state)
+        farming4 = state
+        if farming4 then
+            task.spawn(function()
+                while farming4 do
+                    local args = {
+                        [1] = "rebirthRequest"
+                    }
+                    game:GetService("ReplicatedStorage").rEvents.rebirthEvent:FireServer(unpack(args))
+                    task.wait(1)
+                end
+            end)
         end
-    })
-
-main:AddToggle("so pra funfa" {
-        Title = "auto rebirth",
-        Description = "da rebirth automatico",
-        Defalt = false,
-        Callback = function(state4)
-          local farming4 = state4
-            while farming4 do
-                local args = {
-    [1] = "rebirthRequest"
-}
-
-game:GetService("ReplicatedStorage").rEvents.rebirthEvent:FireServer(unpack(args))
-          repeat.task(1)
-            end
-        end
-    })
-
-
-
-
-
-
-
-
+    end
+})
 
 local tps = Window:AddTab({
-        Title = "Teleports",
-        Icon = "list"
-    })
+    Title = "Teleports",
+    Icon = "list"
+})
 
 tps:AddButton({
     Title = "Área City",
     Description = "Vai para a área City, No Req",
     Callback = function()
-        wait(0.1)
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-591.6768188476562, 4.126866340637207, 439.5089416503906)
-
+        task.wait(0.1)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-591.6768, 4.1268, 439.5089)
     end
 })
-
 
 tps:AddButton({
     Title = "Área Snow",
@@ -221,11 +192,9 @@ tps:AddButton({
             [1] = "travelToArea",
             [2] = workspace.areaCircles.areaCircle
         }
-
         game:GetService("ReplicatedStorage").rEvents.areaTravelRemote:InvokeServer(unpack(args))
-
-        wait(0.1)
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-9673.83203125, 59.306854248046875, 3769.768798828125)
+        task.wait(0.1)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-9673.832, 59.3068, 3769.7688)
     end
 })
 
@@ -237,10 +206,8 @@ tps:AddButton({
             [1] = "travelToArea",
             [2] = workspace.areaCircles.areaCircle
         }
-
         game:GetService("ReplicatedStorage").rEvents.areaTravelRemote:InvokeServer(unpack(args))
-
-        wait(0.1)
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-11055.4072265625, 217.26686096191406, 4903.236328125)
+        task.wait(0.1)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-11055.4072, 217.2668, 4903.2363)
     end
 })
