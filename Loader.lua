@@ -213,3 +213,12 @@ tps:AddButton({
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-11055.4072, 217.2668, 4903.2363)
     end
 })
+
+tps:AddButton({
+    Title = "Área Legends Highway",
+    Description = "Vai para a área Legends Highway, Req 10 rebirths",
+    Callback = function()
+        wait(0.1)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-13098.3134765625, 217.26686096191406, 5906.0810546875)
+    end
+})
