@@ -24,7 +24,7 @@ xpDelay = 0.25
 orbDelay = 0.25
 gemDelay = 0.25
 
-main:AddSlider("xpDelay", {
+main:AddSlider("so pra funfa", {
     Title = "xp Delay",
     Default = 0.25,
     Min = 0.01,
@@ -35,18 +35,18 @@ main:AddSlider("xpDelay", {
     end
 })
 
-main:AddSlider("orbDelay", {
+main:AddSlider("so pra funfa", {
     Title = "orb Delay",
     Default = 0.25,
     Min = 0.01,
     Max = 0.5,
-    Rounding = 3,
+    Rounding = 2,
     Callback = function(value)
         orbDelay = value
     end
 })
 
-main:AddSlider("gemDelay", {
+main:AddSlider("so pra funfa", {
     Title = "gem Delay",
     Default = 0.25,
     Min = 0.01,
@@ -56,6 +56,8 @@ main:AddSlider("gemDelay", {
         gemDelay = value
     end
 })
+
+
 
 local section2 = main:AddSection("Onde você está farmando?")
 
