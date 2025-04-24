@@ -131,8 +131,8 @@ main:AddToggle("so pra funfa", {
 
 local args = {
     [1] = "collectOrb",
-    [2] = "Red Orb",
-    [3] = Cidade
+    [2] = "Ethereal Orb",
+    [3] = cidade
 }
 
 game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer(unpack(args))
@@ -158,8 +158,8 @@ main:AddToggle("so pra funfa", {
 
 local args = {
     [1] = "collectOrb",
-    [2] = "Gem",
-    [3] = Cidade
+    [2] = "Infernal Gem",
+    [3] = cidade
 }
 
 game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer(unpack(args))
@@ -172,7 +172,22 @@ game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer(unpack(args))
         end
     })
 
+main:AddToggle("so pra funfa" {
+        Title = "auto rebirth",
+        Description = "da rebirth automatico",
+        Defalt = false,
+        Callback = function(state4)
+          local farming4 = state4
+            while farming4 do
+                local args = {
+    [1] = "rebirthRequest"
+}
 
+game:GetService("ReplicatedStorage").rEvents.rebirthEvent:FireServer(unpack(args))
+          repeat.task(1)
+            end
+        end
+    })
 
 
 
