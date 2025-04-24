@@ -65,7 +65,7 @@ local Cidade = "City"
 
 local Dropdown = main:AddDropdown("CidadeFarm", {
     Title = "Selecione a Cidade", 
-    Values = {"City", "Snow City", "Magma City"},
+    Values = {"City", "Snow City", "Magma City", "Legends Highway"},
     Multi = false,
     Default = "City"
 })
