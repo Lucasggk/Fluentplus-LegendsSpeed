@@ -65,7 +65,7 @@ local Cidade = "City"
 
 local Dropdown = main:AddDropdown("CidadeFarm", {
     Title = "Selecione a Cidade", 
-    Values = {"City", "Snow City", "Magma City", "Legends Highway"},
+    Values = {"City", "Snow City", "Magma City", "Legends Highway", "Speed Jungle"},
     Multi = false,
     Default = "City"
 })
@@ -273,7 +273,7 @@ local section = gfarm:AddSection("selecione a cidade do farming:")
 
 local Dropdown = gfarm:AddDropdown("CidadeFarm", {
     Title = "Selecione a Cidade", 
-    Values = {"City", "Snow City", "Magma City", "Legends Highway"},
+    Values = {"City", "Snow City", "Magma City", "Legends Highway", "Speed Jungle"},
     Multi = false,
     Default = "City"
 })
@@ -359,3 +359,12 @@ gfarm:AddButton({
         end
     end
 })
+
+
+
+
+local pets = Window:AddTab({
+        Title = "Pets/Trails",
+        Icon = "Egg"
+    })
+        
