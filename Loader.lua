@@ -416,7 +416,7 @@ races:AddToggle("autorace", {
 
 races:AddToggle("", {
     Title = "Auto wim",
-    Description = "ganha automaticamente porém, ele fica dando tp (afk recomendado)",
+    Description = "Ganha automaticamente, porém, ele fica dando tp (afk recomendado)",
     Default = false,
     Callback = function(value)
         if value then
@@ -431,10 +431,12 @@ races:AddToggle("", {
             }
 
             task.spawn(function()
-                for _, pos in ipairs(locations) do
-                    if not value then break end
-                    hrp.CFrame = CFrame.new(pos)
-                    task.wait(0.1)
+                while value do
+                    for _, pos in ipairs(locations) do
+                        if not value then break end
+                        hrp.CFrame = CFrame.new(pos)
+                        task.wait(0.1)
+                    end
                 end
             end)
         end
