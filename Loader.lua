@@ -237,7 +237,7 @@ local gfarm = Window:AddTab{
     Icon = "list"
 }
 
-local section = gfarm:AddSection("como usar e onde usar:")
+local section = gfarm:AddSection("aviso:")
 
 gfarm:AddParagraph{
     Title = "Como usar?",
@@ -245,11 +245,14 @@ gfarm:AddParagraph{
     Content = "Causa ping alto (20-100k), não trava, só dá delay."
 }
 
+
 gfarm:AddParagraph{
     Title = " ",
     TextSize = 15,
     Content = "O local farm tem que estar selecionado no Dropdown!"
 }
+
+local section = gfarm:AddSection("selecione a cidade do farming:")
 
 local Dropdown = gfarm:AddDropdown("CidadeFarm", {
     Title = "Selecione a Cidade", 
@@ -264,7 +267,7 @@ Dropdown:OnChanged(function(value)
 end)
 
 
-local section = gfarm:AddSection("como usar e onde usar:")
+local section = gfarm:AddSection("mini regras:")
 
 gfarm:AddParagraph({
         Title = "como usar:",
@@ -275,6 +278,8 @@ gfarm:AddParagraph({
         Title = "",
         Content = "Para farm level Gfarmsp (muito mais rapido)"
     })
+
+local section = gfarm:AddSection("Gfarms button:")
 
 gfarm:AddButton({
     Title = "GfarmXP (God Farm XP)",
