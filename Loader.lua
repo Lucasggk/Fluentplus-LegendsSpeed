@@ -267,7 +267,9 @@ end)
 local section = gfarm:AddSection("como usar e onde usar:")
 
 gfarm:AddParagraph({
-        Title = "clicar 1 por vez e nao clique muito, demora um pouco para cair tudo",
+        Title = "como usar:",
+        Content = "clicar 1 por vez e nao clique muito, demora um pouco para cair tudo"
+    })
 
 gfarm:AddButton({
     Title = "GfarmXP (God Farm XP)",
