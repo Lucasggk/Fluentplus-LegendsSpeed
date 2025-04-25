@@ -415,30 +415,46 @@ races:AddToggle("autorace", {
 
 
 races:AddToggle("", {
-    Title = "Auto wim",
-    Description = "Ganha automaticamente, porém, ele fica dando tp (afk recomendado)",
+    Title = "Auto Wim + Invisibilidade",
+    Description = "Ganha automaticamente e fica invisível (afk recomendado)",
     Default = false,
     Callback = function(value)
-        if value then
-            local player = game.Players.LocalPlayer
-            local char = player.Character or player.CharacterAdded:Wait()
-            local hrp = char:WaitForChild("HumanoidRootPart")
+        local player = game.Players.LocalPlayer
+        local char = player.Character or player.CharacterAdded:Wait()
+        local hrp = char:WaitForChild("HumanoidRootPart")
+        local humanoid = char:WaitForChild("Humanoid")
+        local locations = {
+            Vector3.new(999, -1, -10997),
+            Vector3.new(33, -2, -8689),
+            Vector3.new(1673, -2, -5952),
+        }
 
-            local locations = {
-                Vector3.new(999, -1, -10997),
-                Vector3.new(33, -2, -8689),
-                Vector3.new(1673, -2, -5952),
-            }
-
-            task.spawn(function()
-                while value do
-                    for _, pos in ipairs(locations) do
-                        if not value then break end
-                        hrp.CFrame = CFrame.new(pos)
-                        task.wait(0.1)
-                    end
+        task.spawn(function()
+            while value do
+                for _, pos in ipairs(locations) do
+                    if not value then break end
+                    hrp.CFrame = CFrame.new(pos)
+                    task.wait(0.3)
                 end
-            end)
+            end
+        end)
+
+        if value then
+            humanoid:SetAttribute("Invisible", true)
+            for _, part in pairs(char:GetChildren()) do
+                if part:IsA("BasePart") then
+                    part.Transparency = 1
+                    part.CanCollide = false
+                end
+            end
+        else
+            humanoid:SetAttribute("Invisible", false)
+            for _, part in pairs(char:GetChildren()) do
+                if part:IsA("BasePart") then
+                    part.Transparency = 0
+                    part.CanCollide = true
+                end
+            end
         end
     end
 })
