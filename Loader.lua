@@ -218,13 +218,30 @@ tps:AddButton({
     Title = "Área Legends Highway",
     Description = "Vai para a área Legends Highway, Req 10 rebirths",
     Callback = function()
-        wait(0.1)
+        local args = {
+            [1] = "travelToArea",
+            [2] = workspace.areaCircles.areaCircle
+        }
+        game:GetService("ReplicatedStorage").rEvents.areaTravelRemote:InvokeServer(unpack(args))
+        task.wait(0.1)
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-13098.3134765625, 217.26686096191406, 5906.0810546875)
     end
 })
 
 
-
+tps:AddButton({
+    Title = "Área jungle",
+    Description = "Vai para a área Speed Jungle, Req 50 rebirths",
+    Callback = function()
+        local args = {
+            [1] = "travelToArea",
+            [2] = workspace.areaCircles.areaCircle
+        }
+        game:GetService("ReplicatedStorage").rEvents.areaTravelRemote:InvokeServer(unpack(args))
+        task.wait(0.1)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-15272, 398, 5573)
+    end
+})
 
 
 
@@ -267,7 +284,7 @@ Dropdown:OnChanged(function(value)
 end)
 
 local dropdownRepeticao = gfarm:AddDropdown("Repeticao", {
-    Title = "Número de Repetição do Gfarm",
+    Title = "Número de Repetição",
     Values = {"10k", "20k", "30k"},
     Default = "10k"
 })
