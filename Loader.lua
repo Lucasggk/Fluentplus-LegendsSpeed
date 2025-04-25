@@ -271,6 +271,11 @@ gfarm:AddParagraph({
         Content = "clicar 1 por vez e nao clique muito, demora um pouco para cair tudo"
     })
 
+gfarm:AddParagraph({
+        Title = "",
+        Content = "Para farm level Gfarmsp (muito mais rapido)"
+    })
+
 gfarm:AddButton({
     Title = "GfarmXP (God Farm XP)",
     Description = "Use o Dropdown para marcar Cidade atual de farm. Não spame click, causará muito lag.",
