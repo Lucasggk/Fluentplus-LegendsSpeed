@@ -391,39 +391,6 @@ pets:AddButton({
     end
 })
 
-pets:AddButton({
-    Title = "samurai",
-    Description = "gasta 250Mi mas voce ganha 4-5 samurais",
-    Callback = function()
-            local function sellPet(petFolder, petName)
-    local pet = petFolder:FindFirstChild(petName)
-    if pet then
-        game:GetService("ReplicatedStorage").rEvents.sellPetEvent:FireServer("sellPet", pet)
-    end
-end
-
-local function openCrystal()
-    game:GetService("ReplicatedStorage").rEvents.openCrystalRemote:InvokeServer("openCrystal", "Jungle Crystal"),
-    game:GetService("ReplicatedStorage").rEvents.openCrystalRemote:InvokeServer("openCrystal", "Jungle Crystal")
-end
-
-local player = game:GetService("Players").LocalPlayer
-local petsFolder = player.petsFolder
-
-for i = 1, 250 do
-    openCrystal()
-
-    task.defer(sellPet, petsFolder.Unique, "Speedy Sensei")
-    task.defer(sellPet, petsFolder.Unique, "Maestro Dog")
-    task.defer(sellPet, petsFolder.Unique, "Golden Viking")
-    task.defer(sellPet, petsFolder.Epic, "Divine Pegasus")
-    task.defer(sellPet, petsFolder.Unique, "Speedy Sensei")
-    task.defer(sellPet, petsFolder.Unique, "Maestro Dog")
-    task.defer(sellPet, petsFolder.Unique, "Golden Viking")
-    task.defer(sellPet, petsFolder.Epic, "Divine Pegasus")
-            end
-        end
-    })
 
 
 
