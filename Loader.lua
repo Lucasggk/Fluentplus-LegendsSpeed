@@ -365,7 +365,7 @@ gfarm:AddButton({
 
 local pets = Window:AddTab({
         Title = "Pets/Trails",
-        Icon = "egg"
+        Icon = "list"
     })
 
 local section = pets:AddSection("Instruções: ")
