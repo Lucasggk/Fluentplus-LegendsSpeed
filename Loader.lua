@@ -379,16 +379,14 @@ pets:AddParagraph({
 local section = pets:AddSection("pets")
 
 pets:AddButton({
-        Title = "melhores pets",
-        Description = "Tenha 1mi de gem, Custa 1 mi por click (pet vai direto pro inv)",
-        Callback = function 
-            local args = {
-    [1] = "openCrystal",
-    [2] = "Jungle Crystal"
-}
-
-game:GetService("ReplicatedStorage").rEvents.openCrystalRemote:InvokeServer(unpack(args))
-            wait(0.3)
-        end
-    })
-        
+    Title = "Melhores Pets",
+    Description = "Tenha 1mi de gem, custa 1mi por click (pet vai direto pro inv)",
+    Callback = function()
+        local args = {
+            [1] = "openCrystal",
+            [2] = "Jungle Crystal"
+        }
+        game:GetService("ReplicatedStorage").rEvents.openCrystalRemote:InvokeServer(unpack(args))
+        wait(0.3)
+    end
+})
