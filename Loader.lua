@@ -266,6 +266,22 @@ Dropdown:OnChanged(function(value)
     print("Cidade selecionada:", Cidade2)
 end)
 
+local dropdownRepeticao = gfarm:AddDropdown("Repeticao", {
+    Title = "Número de Repetição do Gfarm",
+    Values = {"10k", "20k", "30k"},
+    Default = "10k"
+})
+
+dropdownRepeticao:OnChanged(function(value)
+    if value == "10k" then
+        repeticoes = 10000
+    elseif value == "20k" then
+        repeticoes = 20000
+    elseif value == "30k" then
+        repeticoes = 30000
+    end
+    print("Número de repetições selecionado:", repeticoes)
+end)
 
 local section = gfarm:AddSection("mini regras:")
 
@@ -285,7 +301,7 @@ if false then gfarm:AddButton({
     Title = "GfarmXP (God Farm XP)",
     Description = "Use o Dropdown para marcar Cidade atual de farm. Não spame click, causará muito lag.",
     Callback = function()
-        for i = 1, 100000 do
+        for i = 1, repeticoes do
             local args = {
                 [1] = "collectOrb",
                 [2] = "Yellow Orb",
@@ -301,7 +317,7 @@ gfarm:AddButton({
     Title = "GfarmSP (God Farm XP e Speed)",
     Description = "Use o Dropdown para marcar Cidade atual de farm. Não spame click, causará muito lag.",
     Callback = function()
-        for i = 1, 10000 do
+        for i = 1, repeticoes do
             local args = {
                 [1] = "collectOrb",
                 [2] = "Ethereal Orb",
@@ -316,7 +332,7 @@ gfarm:AddButton({
     Title = "GfarmGem (God Farm Gem)",
     Description = "Use o Dropdown para marcar Cidade atual de farm. Não spame click, causará muito lag.",
     Callback = function()
-        for i = 1, 10000 do
+        for i = 1, repeticoes do
             local args = {
                 [1] = "collectOrb",
                 [2] = "Infernal Gem",
