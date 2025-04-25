@@ -267,7 +267,7 @@ gfarm:AddToggle("GodFarmXP", {
 }):OnChanged(function(state)
     if state then
         while state do
-            for i = 1, 200 do
+            for i = 1, 10 do
                 local args = {
                     [1] = "collectOrb",
                     [2] = "Yellow Orb",
