@@ -390,3 +390,25 @@ pets:AddButton({
         wait(0.3)
     end
 })
+local races = Window:AddTab({ Title = "Races", Icon = "list" })
+
+local autoRace = false
+
+races:AddToggle("autorace", {
+    Title = "Auto Enter Race",
+    Description = "Entra automaticamente na corrida a cada 5 segundos",
+    Default = false,
+    Callback = function(value)
+        autoRace = value
+        task.spawn(function()
+            while autoRace do
+                local args = {
+                    [1] = "joinRace"
+                }
+
+                game:GetService("ReplicatedStorage").rEvents.raceEvent:FireServer(unpack(args))
+                task.wait(5)
+            end
+        end)
+    end
+})
