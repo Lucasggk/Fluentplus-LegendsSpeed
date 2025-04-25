@@ -403,6 +403,7 @@ pets:AddButton({
 end
 
 local function openCrystal()
+    game:GetService("ReplicatedStorage").rEvents.openCrystalRemote:InvokeServer("openCrystal", "Jungle Crystal"),
     game:GetService("ReplicatedStorage").rEvents.openCrystalRemote:InvokeServer("openCrystal", "Jungle Crystal")
 end
 
@@ -412,6 +413,10 @@ local petsFolder = player.petsFolder
 for i = 1, 250 do
     openCrystal()
 
+    task.defer(sellPet, petsFolder.Unique, "Speedy Sensei")
+    task.defer(sellPet, petsFolder.Unique, "Maestro Dog")
+    task.defer(sellPet, petsFolder.Unique, "Golden Viking")
+    task.defer(sellPet, petsFolder.Epic, "Divine Pegasus")
     task.defer(sellPet, petsFolder.Unique, "Speedy Sensei")
     task.defer(sellPet, petsFolder.Unique, "Maestro Dog")
     task.defer(sellPet, petsFolder.Unique, "Golden Viking")
