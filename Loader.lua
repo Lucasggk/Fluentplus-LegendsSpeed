@@ -295,3 +295,34 @@ gfarm:AddButton({
         end
     end
 })
+
+
+gfarm:AddButton({
+    Title = "GfarmSP (God Farm XP e Speed)",
+    Description = "Use o Dropdown para marcar Cidade atual de farm. Não spame click, causará muito lag.",
+    Callback = function()
+        for i = 1, 100000 do
+            local args = {
+                [1] = "collectOrb",
+                [2] = "Ethereal Orb",
+                [3] = Cidade2
+            }
+            game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer(unpack(args))
+        end
+    end
+})
+
+gfarm:AddButton({
+    Title = "GfarmGem (God Farm Gem)",
+    Description = "Use o Dropdown para marcar Cidade atual de farm. Não spame click, causará muito lag.",
+    Callback = function()
+        for i = 1, 100000 do
+            local args = {
+                [1] = "collectOrb",
+                [2] = "Infernal Gem",
+                [3] = Cidade2
+            }
+            game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer(unpack(args))
+        end
+    end
+})
