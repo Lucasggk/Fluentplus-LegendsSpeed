@@ -249,7 +249,7 @@ gfarm:AddParagraph{
     Content = "O local farm tem que estar selecionado no Dropdown!"
 }
 
-local Dropdown = main:AddDropdown("CidadeFarm", {
+local Dropdown = gfarm:AddDropdown("CidadeFarm", {
     Title = "Selecione a Cidade", 
     Values = {"City", "Snow City", "Magma City", "Legends Highway"},
     Multi = false,
@@ -266,13 +266,16 @@ gfarm:AddToggle("GodFarmXP", {
     Default = false
 }):OnChanged(function(state)
     if state then
-        for i = 1, 200 do
-            local args = {
-                [1] = "collectOrb",
-                [2] = "Yellow Orb",
-                [3] = Cidade2
-            }
-            game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer(unpack(args))
+        while state do
+            for i = 1, 200 do
+                local args = {
+                    [1] = "collectOrb",
+                    [2] = "Yellow Orb",
+                    [3] = Cidade2
+                }
+                game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer(unpack(args))
+            end
+            wait(0.01)
         end
     end
 end)
