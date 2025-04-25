@@ -237,6 +237,8 @@ local gfarm = Window:AddTab{
     Icon = "list"
 }
 
+local section = gfarm:AddSection("como usar e onde usar:")
+
 gfarm:AddParagraph{
     Title = "Como usar?",
     TextSize = 7,
@@ -261,21 +263,29 @@ Dropdown:OnChanged(function(value)
     print("Cidade selecionada:", Cidade2)
 end)
 
-gfarm:AddToggle("GodFarmXP", {
-    Title = "Gfarm (god farm xp)",
-    Default = false
-}):OnChanged(function(state)
-    if state then
-        while state do
-            for i = 1, 10 do
-                local args = {
-                    [1] = "collectOrb",
-                    [2] = "Yellow Orb",
-                    [3] = Cidade2
-                }
-                game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer(unpack(args))
-            end
-            wait(0.01)
+
+local section = gfarm:AddSection("como usar e onde usar:")
+
+gfarm:AddParagraph({
+        Title = "clicar 1 por vez e nao clique muito, demora um pouco para cair tudo",
+
+gfarm:AddButton({
+    Title = "GfarmXP (God Farm XP)",
+    Description = "Use o Dropdown para marcar Cidade atual de farm. Não spame click, causará muito lag.",
+    Callback = function()
+        local button = gfarm:GetButton("GfarmXP (God Farm XP)")
+        button:SetDisabled(true)
+
+        for i = 1, 100000 do
+            local args = {
+                [1] = "collectOrb",
+                [2] = "Yellow Orb",
+                [3] = Cidade2
+            }
+            game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer(unpack(args))
         end
+
+        wait(0.5)
+        button:SetDisabled(false)
     end
-end)
+})
