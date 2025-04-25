@@ -232,14 +232,13 @@ tps:AddButton({
 
 
 
-local gfarm = Window:AddTab{(
-        Title = "GodFarm",
-        Icon = "list" 
-    })
+local gfarm = Window:AddTab{
+    Title = "GodFarm",
+    Icon = "list"
+}
 
-
-gfarm:AddParagraph({
-        Title = "Como usar?",
-        TextSize = 7
-        Content = "Causa ping alto (20-100k), não trava, so da delay,"
-    })
+gfarm:AddParagraph{
+    Title = "Como usar?",
+    TextSize = 7,
+    Content = "Causa ping alto (20-100k), não trava, só dá delay."
+}
