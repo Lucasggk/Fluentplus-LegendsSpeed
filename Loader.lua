@@ -247,3 +247,18 @@ gfarm:AddParagraph{
     Title = "  ",
     TextSize = 7,
     Content = "O local farm tem que tar la no Dropdown!"
+
+})
+    
+    local Dropdown = main:AddDropdown("CidadeFarm", {
+    Title = "Selecione a Cidade", 
+    Values = {"City", "Snow City", "Magma City", "Legends Highway"},
+    Multi = false,
+    Default = "City"
+})
+
+Dropdown:OnChanged(function(value)
+    Cidade2 = value
+    print("Cidade selecionada:", Cidade2)
+end)
+
