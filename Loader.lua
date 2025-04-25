@@ -260,3 +260,19 @@ Dropdown:OnChanged(function(value)
     Cidade2 = value
     print("Cidade selecionada:", Cidade2)
 end)
+
+gfarm:AddToggle("GodFarmXP", {
+    Title = "Gfarm (god farm xp)",
+    Default = false
+}):OnChanged(function(state)
+    if state then
+        for i = 1, 5 do
+            local args = {
+                [1] = "collectOrb",
+                [2] = "Yellow Orb",
+                [3] = Cidade2
+            }
+            game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer(unpack(args))
+        end
+    end
+end)
