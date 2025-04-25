@@ -242,3 +242,8 @@ gfarm:AddParagraph{
     TextSize = 7,
     Content = "Causa ping alto (20-100k), não trava, só dá delay."
 }
+
+gfarm:AddParagraph{
+    Title = "  ",
+    TextSize = 7,
+    Content = "O local farm tem que tar la no Dropdown!"
