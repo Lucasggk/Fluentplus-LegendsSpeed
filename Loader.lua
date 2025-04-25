@@ -275,9 +275,6 @@ gfarm:AddButton({
     Title = "GfarmXP (God Farm XP)",
     Description = "Use o Dropdown para marcar Cidade atual de farm. Não spame click, causará muito lag.",
     Callback = function()
-        local button = gfarm:GetButton("GfarmXP (God Farm XP)")
-        button:SetDisabled(true)
-
         for i = 1, 100000 do
             local args = {
                 [1] = "collectOrb",
@@ -286,8 +283,5 @@ gfarm:AddButton({
             }
             game:GetService("ReplicatedStorage").rEvents.orbEvent:FireServer(unpack(args))
         end
-
-        wait(0.5)
-        button:SetDisabled(false)
     end
 })
