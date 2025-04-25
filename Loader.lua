@@ -412,3 +412,31 @@ races:AddToggle("autorace", {
         end)
     end
 })
+
+
+races:AddToggle("", {
+    Title = "Auto wim",
+    Description = "ganha automaticamente porém, ele fica dando tp (afk recomendado)",
+    Default = false,
+    Callback = function(value)
+        if value then
+            local player = game.Players.LocalPlayer
+            local char = player.Character or player.CharacterAdded:Wait()
+            local hrp = char:WaitForChild("HumanoidRootPart")
+
+            local locations = {
+                Vector3.new(999, -1, -10997),
+                Vector3.new(33, -2, -8689),
+                Vector3.new(1673, -2, -5952),
+            }
+
+            task.spawn(function()
+                for _, pos in ipairs(locations) do
+                    if not value then break end
+                    hrp.CFrame = CFrame.new(pos)
+                    task.wait(0.1)
+                end
+            end)
+        end
+    end
+})
