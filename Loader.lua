@@ -281,7 +281,7 @@ gfarm:AddParagraph({
 
 local section = gfarm:AddSection("Gfarms button:")
 
-gfarm:AddButton({
+if false then gfarm:AddButton({
     Title = "GfarmXP (God Farm XP)",
     Description = "Use o Dropdown para marcar Cidade atual de farm. Não spame click, causará muito lag.",
     Callback = function()
@@ -295,13 +295,13 @@ gfarm:AddButton({
         end
     end
 })
-
+end 
 
 gfarm:AddButton({
     Title = "GfarmSP (God Farm XP e Speed)",
     Description = "Use o Dropdown para marcar Cidade atual de farm. Não spame click, causará muito lag.",
     Callback = function()
-        for i = 1, 100000 do
+        for i = 1, 10000 do
             local args = {
                 [1] = "collectOrb",
                 [2] = "Ethereal Orb",
@@ -316,7 +316,7 @@ gfarm:AddButton({
     Title = "GfarmGem (God Farm Gem)",
     Description = "Use o Dropdown para marcar Cidade atual de farm. Não spame click, causará muito lag.",
     Callback = function()
-        for i = 1, 100000 do
+        for i = 1, 10000 do
             local args = {
                 [1] = "collectOrb",
                 [2] = "Infernal Gem",
