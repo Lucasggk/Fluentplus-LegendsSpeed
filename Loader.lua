@@ -222,3 +222,24 @@ tps:AddButton({
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-13098.3134765625, 217.26686096191406, 5906.0810546875)
     end
 })
+
+
+
+
+
+
+
+
+
+
+local gfarm = Window:AddTab{(
+        Title = "GodFarm",
+        Icon = "list" 
+    })
+
+
+gfarm:AddParagraph({
+        Title = "Como usar?",
+        TextSize = 7
+        Content = "Causa ping alto (20-100k), não trava, so da delay,"
+    })
