@@ -371,9 +371,9 @@ local pets = Window:AddTab({
 local section = pets:AddSection("Instruções: ")
 
 pets:AddParagraph({
-        Title = "Como usar: ",
-        Description = "ao clica voce ganha o pet/trail direto pro inv"
-    })
+    Title = "Como usar:",
+    Description = "Ao clicar, o pet ou trail será enviado diretamente para o seu inventário."
+})
         
 
 local section = pets:AddSection("pets")
